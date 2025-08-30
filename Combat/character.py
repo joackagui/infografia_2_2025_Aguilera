@@ -1,13 +1,3 @@
-# infografia_2_2025_Aguilera
-# 1.Combat
-#   --> main.py
-#   --> character.py
-
-# Domingo 8 pm
-# eduardo.laruta+tareas@gmail.com
-# Asunto: tarea 1 - Joaquín Aguilera
-# Mensaje: link del repositorio
-
 import random
 
 class Character:
