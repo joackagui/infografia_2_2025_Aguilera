@@ -1,9 +1,24 @@
 extends Node2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-func _on_activate_zone_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+@export var speed: float = 150.0
+@export var max_distance: float = 200.0
 
+var start_position: Vector2
+var direction: int = 1
 
-func _on_activate_zone_body_exited(body: Node2D) -> void:
-	pass # Replace with function body.
+func _ready() -> void:
+	animation_player.play("Active")
+	start_position = global_position
+
+func _process(delta: float) -> void:
+	global_position.x += speed * direction * delta
+	
+	if global_position.x >= start_position.x + max_distance:
+		direction = -1
+	elif global_position.x <= start_position.x - max_distance:
+		direction = 1
+
+func death():
+	queue_free()

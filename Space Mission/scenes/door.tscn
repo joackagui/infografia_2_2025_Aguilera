@@ -8,6 +8,8 @@
 size = Vector2(56, 64)
 
 [node name="Door" type="Area2D"]
+collision_layer = 129
+collision_mask = 2
 script = ExtResource("1_uvdjg")
 closed_texture = ExtResource("1_hpvv5")
 open_texture = ExtResource("3_83dcw")
@@ -20,3 +22,6 @@ texture = ExtResource("1_hpvv5")
 position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_uvdjg")
 debug_color = Color(0, 0.647423, 0.211465, 0.42)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

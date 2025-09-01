@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ub7pcmbtaeob"]
+[gd_scene load_steps=10 format=3 uid="uid://ub7pcmbtaeob"]
 
 [ext_resource type="Script" uid="uid://dh1ymy0kotrpi" path="res://scripts/enemya.gd" id="1_320d0"]
 [ext_resource type="Texture2D" uid="uid://7owv08jmf8kq" path="res://assets/textures/enemy_a_attack_rest.png" id="1_dhfb4"]
@@ -99,9 +99,6 @@ _data = {
 &"RESET": SubResource("Animation_nenq2")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7l8r"]
-size = Vector2(244, 91)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_8qclf"]
 radius = 24.0
 
@@ -118,19 +115,11 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="ActivateZone" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivateZone"]
-position = Vector2(0, -36.5)
-shape = SubResource("RectangleShape2D_k7l8r")
-debug_color = Color(0, 0.588235, 0.756863, 0.160784)
-
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 17
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -40)
 shape = SubResource("CircleShape2D_8qclf")
 debug_color = Color(0.714092, 0.483097, 0.0397373, 0.42)
-
-[connection signal="body_entered" from="ActivateZone" to="." method="_on_activate_zone_body_entered"]
-[connection signal="body_exited" from="ActivateZone" to="." method="_on_activate_zone_body_exited"]
