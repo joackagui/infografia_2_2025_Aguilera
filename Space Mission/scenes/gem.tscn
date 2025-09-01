@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwgryqf8rcart"]
+[gd_scene load_steps=7 format=3 uid="uid://b2vxoac7rukid"]
 
-[ext_resource type="Script" uid="uid://dh8fkb2gb1fvr" path="res://scripts/key.gd" id="1_fttkb"]
-[ext_resource type="Texture2D" uid="uid://coq3v1r774iea" path="res://assets/textures/key.png" id="1_yk2u2"]
+[ext_resource type="Script" uid="uid://b7tv4d1dl8kgd" path="res://scripts/gem.gd" id="1_mpwtx"]
+[ext_resource type="Texture2D" uid="uid://wnv81dt40220" path="res://assets/textures/gem.png" id="2_bhq7q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk2u2"]
-size = Vector2(42, 46)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj4j3"]
+size = Vector2(40, 35)
 
 [sub_resource type="Animation" id="Animation_fttkb"]
 resource_name = "Default"
@@ -44,16 +44,15 @@ _data = {
 &"RESET": SubResource("Animation_wy8tx")
 }
 
-[node name="Key" type="Area2D"]
+[node name="Gem" type="Area2D"]
 collision_mask = 3
-script = ExtResource("1_fttkb")
+script = ExtResource("1_mpwtx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yk2u2")
+texture = ExtResource("2_bhq7q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yk2u2")
-debug_color = Color(1.8049e-06, 0.649735, 0.130521, 0.42)
+shape = SubResource("RectangleShape2D_rj4j3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
